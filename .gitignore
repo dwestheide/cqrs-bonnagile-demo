@@ -1,0 +1,21 @@
+lib_managed/
+project/boot/
+.idea
+.idea_modules
+.DS_Store
+target/
+project/plugins/src_managed/
+project/plugins/project/
+.DS_Store
+.idea
+.idea_modules
+\#*\#
+*~
+# IDEA Ignores
+*.iml
+*.ipr
+*.iws
+.idea/
+.idea_modules/
+# OS X
+.DS_Store
