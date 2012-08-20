@@ -96,10 +96,10 @@ class ShoppingCartHandler
   }
 
   def apply(cart: ShoppingCart, event: ShoppingCartEvent) = event match {
-    case ItemAddedEvent(productId, quantity, price, _, _) =>
-      cart + (CartItem(productId, price), quantity)
-    case ItemRemovedEvent(productId, quantity, _, _) =>
-      cart - (productId, quantity)
+    case ItemAddedEvent(productId, quantity, price, _, eventPos) =>
+      cart.copy(pos = eventPos) + (CartItem(productId, price), quantity)
+    case ItemRemovedEvent(productId, quantity, _, eventPos) =>
+      cart.copy(pos = eventPos) - (productId, quantity)
   }
 }
 
